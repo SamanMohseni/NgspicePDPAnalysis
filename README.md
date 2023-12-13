@@ -21,7 +21,7 @@ After considering various circuit designs, we decided to use the conventional Fu
 
 The ripple carry adder was simulated using ngspice version 34, which can be downloaded from [sourceforge.net/projects/ngspice/files/ng-spice-rework](https://sourceforge.net/projects/ngspice/files/ng-spice-rework).
 
-The schematic for all designed components can be found in the Schematic folder.
+The schematic for all designed components can be found in the Schematics folder.
 
 ### Delay Analysis
 To calculate delay, we applied inputs to the circuit at specific time intervals using ngspice and stored the output voltages for the entire simulation duration. A C++ program, MaxDelayFinder.cpp, was used to analyze the output file and calculate the maximum delay, which is the intrval between new input and stabilization.
