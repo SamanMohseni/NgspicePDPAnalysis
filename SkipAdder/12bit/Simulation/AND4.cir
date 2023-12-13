@@ -1,0 +1,16 @@
+******************** AND4 ********************
+.subckt AND4 VSS VDD A B C D out
+MMP17 out AB Node_1 Node_1 PMOS
+MMP16 Node_1 CD VDD VDD PMOS
+MMP5 AB A VDD VDD PMOS
+MMP8 AB B VDD VDD PMOS
+MMN5 AB B Node_5 Node_5 NMOS
+MMN6 Node_5 A VSS VSS NMOS
+MMN12 out AB VSS VSS NMOS
+MMN13 out CD VSS VSS NMOS
+MMN1 Node_11 C VSS VSS NMOS
+MMN2 CD D Node_11 Node_11 NMOS
+MMP1 CD D VDD VDD PMOS
+MMP2 CD C VDD VDD PMOS
+.ends AND4
+**********************************************

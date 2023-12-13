@@ -1,0 +1,7 @@
+*************** Bipolar Switch ***************
+.model switch1 sw vt=0 vh=0 ron=1e-6 roff=1e+12
+.subckt BipolarSwitch on off ctrl VSS out
+S2 on out ctrl VSS switch1
+S1 off out VSS ctrl switch1
+.ends BipolarSwitch
+**********************************************

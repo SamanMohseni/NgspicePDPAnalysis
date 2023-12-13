@@ -1,0 +1,65 @@
+
+*************************************************
+*   Author: Seyed Saman Mohseni Sangtabi        *
+*   Student number: 99210067                    *
+*   Final exam, question 6                      *
+*************************************************
+
+.title FA test
+
+* include CMOS Transistors *
+.INCLUDE mosfet.pm
+
+* define or include sub circuits *
+.INCLUDE FAP.cir
+
+*** specify circuit by modifying parameters ***
+.param voltage = 1.2v
+.param inputPeriod = 1u
+***********************************************
+
+* test signal details *
+.param Bit0PulseWidth = {inputPeriod}
+.param Bit0Period = {2*Bit0PulseWidth}
+
+.param Bit1PulseWidth = {2*inputPeriod}
+.param Bit1Period = {2*Bit1PulseWidth}
+
+.param Bit2PulseWidth = {4*inputPeriod}
+.param Bit2Period = {2*Bit2PulseWidth}
+
+.param InitialDelay = {2*inputPeriod}
+.param epsilon = {inputPeriod/4}
+
+.csparam simulationStep = {inputPeriod/1000}
+.csparam simulationDuration = {InitialDelay + Bit2Period + epsilon}
+
+
+* test signals *
+Vbit0 bit0 0 dc 0 PULSE (0 1 {InitialDelay} 0 0 {Bit0PulseWidth} {Bit0Period})
+Vbit1 bit1 0 dc 0 PULSE (0 1 {InitialDelay} 0 0 {Bit1PulseWidth} {Bit1Period})
+Vbit2 bit2 0 dc 0 PULSE (0 1 {InitialDelay} 0 0 {Bit2PulseWidth} {Bit2Period})
+
+* power supply *
+Vpower VDD 0 {voltage}
+Vgnd VSS 0 0
+
+
+******************* netlist *******************
+XL1 VSS VDD C bit2 bit1 bit0 S P FAP
+***********************************************
+
+
+.control
+print {simulationStep}
+print {simulationDuration}
+tran 1n 10.25u
+plot bit0
+plot bit1
+plot bit2
+plot S
+plot C
+plot P
+.endc
+
+.end

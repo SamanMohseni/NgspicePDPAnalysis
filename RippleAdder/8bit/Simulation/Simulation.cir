@@ -1,0 +1,130 @@
+
+*************************************************
+*   Author: Seyed Saman Mohseni Sangtabi        *
+*   Student number: 99210067                    *
+*   Final exam, question 6                      *
+*************************************************
+
+.title 8-bit ripple carry adder delay test
+
+* include CMOS Transistors *
+.INCLUDE mosfet.pm
+
+* define or include sub circuits *
+.INCLUDE FA.cir
+
+.INCLUDE BPSW.cir
+
+
+*** specify circuit by modifying parameters ***
+.param voltage = 1.2v
+.param inputPeriod = 3u
+***********************************************
+
+********** test signal details **********
+.param reseterPulseWidth = {inputPeriod/2}
+.param reseterPeriod = {2*reseterPulseWidth}
+
+.param Bit0PulseWidth = {inputPeriod}
+.param Bit0Period = {2*Bit0PulseWidth}
+
+.param Bit1PulseWidth = {2*inputPeriod}
+.param Bit1Period = {2*Bit1PulseWidth}
+
+.param Bit2PulseWidth = {4*inputPeriod}
+.param Bit2Period = {2*Bit2PulseWidth}
+
+.param Bit3PulseWidth = {8*inputPeriod}
+.param Bit3Period = {2*Bit3PulseWidth}
+
+.param Bit4PulseWidth = {16*inputPeriod}
+.param Bit4Period = {2*Bit4PulseWidth}
+
+.param Bit5PulseWidth = {32*inputPeriod}
+.param Bit5Period = {2*Bit5PulseWidth}
+
+.param Bit6PulseWidth = {64*inputPeriod}
+.param Bit6Period = {2*Bit6PulseWidth}
+
+.param Bit7PulseWidth = {128*inputPeriod}
+.param Bit7Period = {2*Bit7PulseWidth}
+*****************************************
+
+.param InitialDelay = {2*inputPeriod}
+.param epsilon = {inputPeriod/4}
+
+.param slope = 0
+
+.csparam simulationStep = {inputPeriod/1000}
+.csparam simulationDuration = {InitialDelay + Bit7Period + epsilon}
+
+
+* test signals *
+Vreset reset 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {reseterPulseWidth} {reseterPeriod})
+Vbit0 bit_0 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit0PulseWidth} {Bit0Period})
+Vbit1 bit_1 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit1PulseWidth} {Bit1Period})
+Vbit2 bit_2 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit2PulseWidth} {Bit2Period})
+Vbit3 bit_3 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit3PulseWidth} {Bit3Period})
+Vbit4 bit_4 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit4PulseWidth} {Bit4Period})
+Vbit5 bit_5 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit5PulseWidth} {Bit5Period})
+Vbit6 bit_6 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit6PulseWidth} {Bit6Period})
+Vbit7 bit_7 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit7PulseWidth} {Bit7Period})
+
+* fixed bits *
+Vf0 f_0 0 0
+Vf1 f_1 0 {voltage}
+Vf2 f_2 0 {voltage}
+Vf3 f_3 0 {voltage}
+Vf4 f_4 0 0
+Vf5 f_5 0 {voltage}
+Vf6 f_6 0 0
+Vf7 f_7 0 {voltage}
+Vf8 f_8 0 0
+
+Vth Vsw 0 {voltage/2}
+
+XSW0 0 bit_0 reset Vsw bit0 BipolarSwitch
+XSW1 0 bit_1 reset Vsw bit1 BipolarSwitch
+XSW2 0 bit_2 reset Vsw bit2 BipolarSwitch
+XSW3 0 bit_3 reset Vsw bit3 BipolarSwitch
+XSW4 0 bit_4 reset Vsw bit4 BipolarSwitch
+XSW5 0 bit_5 reset Vsw bit5 BipolarSwitch
+XSW6 0 bit_6 reset Vsw bit6 BipolarSwitch
+XSW7 0 bit_7 reset Vsw bit7 BipolarSwitch
+
+XSWf0 0 f_0 reset Vsw f0 BipolarSwitch
+XSWf1 0 f_1 reset Vsw f1 BipolarSwitch
+XSWf2 0 f_2 reset Vsw f2 BipolarSwitch
+XSWf3 0 f_3 reset Vsw f3 BipolarSwitch
+XSWf4 0 f_4 reset Vsw f4 BipolarSwitch
+XSWf5 0 f_5 reset Vsw f5 BipolarSwitch
+XSWf6 0 f_6 reset Vsw f6 BipolarSwitch
+XSWf7 0 f_7 reset Vsw f7 BipolarSwitch
+XSWf8 0 f_8 reset Vsw f8 BipolarSwitch
+
+
+* power supply *
+Vpower VDD 0 {voltage}
+Vgnd VSS 0 0
+
+
+******************* netlist *******************
+XL8 VSS VDD Node_3 f6 f5 Node_2 Node_30 FA_X1
+XL7 VSS VDD Node_1 f8 f7 Node_3 Node_33 FA_X1
+XL6 VSS VDD Node_2 f4 f3 Node_4 Node_34 FA_X1
+XL5 VSS VDD Node_4 f2 f1 f0 Node_35 FA_X1
+XL1 VSS VDD Node_5 bit1 bit0 Node_1 S0 FA_X1
+XL2 VSS VDD Node_7 bit3 bit2 Node_5 S1 FA_X1
+XL3 VSS VDD C bit7 bit6 Node_6 S3 FA_X1
+XL4 VSS VDD Node_6 bit5 bit4 Node_7 S2 FA_X1
+***********************************************
+
+.control
+print {simulationStep}
+print {simulationDuration}
+tran 3n 774.75u
+write C.txt C
+write S3.txt S3
+.endc
+
+.end

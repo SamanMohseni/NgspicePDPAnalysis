@@ -1,0 +1,161 @@
+
+*************************************************
+*   Author: Seyed Saman Mohseni Sangtabi        *
+*   Student number: 99210067                    *
+*   Final exam, question 6                      *
+*************************************************
+
+.title 16-bit carry skip adder delay test
+
+* include CMOS Transistors *
+.INCLUDE mosfet.pm
+
+* define or include sub circuits *
+.INCLUDE SkipAdder4bit.cir
+
+.INCLUDE BPSW.cir
+
+
+*** specify circuit by modifying parameters ***
+.param voltage = 1.2v
+.param inputPeriod = 4u
+***********************************************
+
+********** test signal details **********
+.param reseterPulseWidth = {inputPeriod/2}
+.param reseterPeriod = {2*reseterPulseWidth}
+
+.param Bit0PulseWidth = {inputPeriod}
+.param Bit0Period = {2*Bit0PulseWidth}
+
+.param Bit1PulseWidth = {2*inputPeriod}
+.param Bit1Period = {2*Bit1PulseWidth}
+
+.param Bit2PulseWidth = {4*inputPeriod}
+.param Bit2Period = {2*Bit2PulseWidth}
+
+.param Bit3PulseWidth = {8*inputPeriod}
+.param Bit3Period = {2*Bit3PulseWidth}
+
+.param Bit4PulseWidth = {16*inputPeriod}
+.param Bit4Period = {2*Bit4PulseWidth}
+
+.param Bit5PulseWidth = {32*inputPeriod}
+.param Bit5Period = {2*Bit5PulseWidth}
+
+.param Bit6PulseWidth = {64*inputPeriod}
+.param Bit6Period = {2*Bit6PulseWidth}
+
+.param Bit7PulseWidth = {128*inputPeriod}
+.param Bit7Period = {2*Bit7PulseWidth}
+*****************************************
+
+.param InitialDelay = {2*inputPeriod}
+.param epsilon = {inputPeriod/4}
+
+.param slope = 0
+
+.csparam simulationStep = {inputPeriod/1000}
+.csparam simulationDuration = {InitialDelay + Bit7Period + epsilon}
+
+
+* test signals *
+Vreset reset 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {reseterPulseWidth} {reseterPeriod})
+Vbit0 bit_0 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit0PulseWidth} {Bit0Period})
+Vbit1 bit_1 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit1PulseWidth} {Bit1Period})
+Vbit2 bit_2 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit2PulseWidth} {Bit2Period})
+Vbit3 bit_3 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit3PulseWidth} {Bit3Period})
+Vbit4 bit_4 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit4PulseWidth} {Bit4Period})
+Vbit5 bit_5 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit5PulseWidth} {Bit5Period})
+Vbit6 bit_6 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit6PulseWidth} {Bit6Period})
+Vbit7 bit_7 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit7PulseWidth} {Bit7Period})
+
+* fixed bits *
+Vf0 f_0 0 0
+Vf1 f_1 0 {voltage}
+Vf2 f_2 0 {voltage}
+Vf3 f_3 0 {voltage}
+Vf4 f_4 0 0
+Vf5 f_5 0 {voltage}
+Vf6 f_6 0 0
+Vf7 f_7 0 {voltage}
+Vf8 f_8 0 0
+
+Vf09 f_09 0 {voltage}
+Vf10 f_10 0 0
+Vf11 f_11 0 0
+Vf12 f_12 0 {voltage}
+Vf13 f_13 0 0
+Vf14 f_14 0 {voltage}
+Vf15 f_15 0 {voltage}
+Vf16 f_16 0 0
+
+Vf17 f_17 0 {voltage}
+Vf18 f_18 0 0
+Vf19 f_19 0 0
+Vf20 f_20 0 {voltage}
+Vf21 f_21 0 0
+Vf22 f_22 0 {voltage}
+Vf23 f_23 0 0
+Vf24 f_24 0 {voltage}
+
+Vth Vsw 0 {voltage/2}
+
+XSW0 0 bit_0 reset Vsw bit0 BipolarSwitch
+XSW1 0 bit_1 reset Vsw bit1 BipolarSwitch
+XSW2 0 bit_2 reset Vsw bit2 BipolarSwitch
+XSW3 0 bit_3 reset Vsw bit3 BipolarSwitch
+XSW4 0 bit_4 reset Vsw bit4 BipolarSwitch
+XSW5 0 bit_5 reset Vsw bit5 BipolarSwitch
+XSW6 0 bit_6 reset Vsw bit6 BipolarSwitch
+XSW7 0 bit_7 reset Vsw bit7 BipolarSwitch
+
+XSWf0 0 f_0 reset Vsw f0 BipolarSwitch
+XSWf1 0 f_1 reset Vsw f1 BipolarSwitch
+XSWf2 0 f_2 reset Vsw f2 BipolarSwitch
+XSWf3 0 f_3 reset Vsw f3 BipolarSwitch
+XSWf4 0 f_4 reset Vsw f4 BipolarSwitch
+XSWf5 0 f_5 reset Vsw f5 BipolarSwitch
+XSWf6 0 f_6 reset Vsw f6 BipolarSwitch
+XSWf7 0 f_7 reset Vsw f7 BipolarSwitch
+XSWf8 0 f_8 reset Vsw f8 BipolarSwitch
+
+XSWf09 0 f_09 reset Vsw f09 BipolarSwitch
+XSWf10 0 f_10 reset Vsw f10 BipolarSwitch
+XSWf11 0 f_11 reset Vsw f11 BipolarSwitch
+XSWf12 0 f_12 reset Vsw f12 BipolarSwitch
+XSWf13 0 f_13 reset Vsw f13 BipolarSwitch
+XSWf14 0 f_14 reset Vsw f14 BipolarSwitch
+XSWf15 0 f_15 reset Vsw f15 BipolarSwitch
+XSWf16 0 f_16 reset Vsw f16 BipolarSwitch
+
+XSWf17 0 f_17 reset Vsw f17 BipolarSwitch
+XSWf18 0 f_18 reset Vsw f18 BipolarSwitch
+XSWf19 0 f_19 reset Vsw f19 BipolarSwitch
+XSWf20 0 f_20 reset Vsw f20 BipolarSwitch
+XSWf21 0 f_21 reset Vsw f21 BipolarSwitch
+XSWf22 0 f_22 reset Vsw f22 BipolarSwitch
+XSWf23 0 f_23 reset Vsw f23 BipolarSwitch
+XSWf24 0 f_24 reset Vsw f24 BipolarSwitch
+
+* power supply *
+Vpower VDD 0 {voltage}
+Vgnd VSS 0 0
+
+
+******************* netlist *******************
+Xskip40 VSS VDD f0 f1 f2 f3 f4 f5 f6 f7 f8 S31 Ci0 skip4
+Xskip41 VSS VDD Ci0 f09 f10 f11 f12 f13 f14 f15 f16 S32 Ci1 skip4
+Xskip42 VSS VDD Ci1 f17 f18 f19 f20 f21 f22 f23 f24 S33 Ci skip4
+Xskip43 VSS VDD Ci bit0 bit1 bit2 bit3 bit4 bit5 bit6 bit7 S3 Cout skip4
+***********************************************
+
+.control
+print {simulationStep}
+print {simulationDuration}
+tran 4n 1033u
+write C.txt Cout
+write S3.txt S3
+.endc
+
+.end

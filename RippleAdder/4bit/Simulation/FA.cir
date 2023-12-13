@@ -1,0 +1,32 @@
+********************* FA *********************
+.subckt FA_X1 VSS VDD Cout B A Cin Sum
+MMP18 Sum Node_2 VDD VDD PMOS
+MMN18 Sum Node_2 VSS VSS NMOS
+MMP17 Node_2 Cin Node_13 Node_13 PMOS
+MMP16 Node_13 B Node_14 Node_14 PMOS
+MMP15 Node_14 A Node_10 Node_10 PMOS
+MMP14 Node_2 Node_19 Node_10 Node_10 PMOS
+MMP13 Node_10 B VDD VDD PMOS
+MMP12 Node_10 A VDD VDD PMOS
+MMP11 Node_10 Cin VDD VDD PMOS
+MMP10 Cout Node_19 vdd vdd PMOS
+MMN10 Cout Node_19 VSS VSS NMOS
+MMP5 Node_26 A VDD VDD PMOS
+MMP6 Node_24 B Node_26 Node_26 PMOS
+MMP7 Node_19 A Node_24 Node_24 PMOS
+MMP8 Node_26 B VDD VDD PMOS
+MMP9 Node_19 Cin Node_26 Node_26 PMOS
+MMN5 Node_19 Cin Node_17 Node_17 NMOS
+MMN6 Node_17 A VSS VSS NMOS
+MMN7 Node_17 B VSS VSS NMOS
+MMN8 Node_18 B VSS VSS NMOS
+MMN9 Node_19 A Node_18 Node_18 NMOS
+MMN11 Node_2 Node_19 Node_30 Node_30 NMOS
+MMN12 Node_30 A VSS VSS NMOS
+MMN13 Node_30 B VSS VSS NMOS
+MMN14 Node_30 Cin VSS VSS NMOS
+MMN15 Node_2 Cin Node_7 Node_7 NMOS
+MMN16 Node_7 A Node_6 Node_6 NMOS
+MMN17 Node_6 B VSS VSS NMOS
+.ends FA_X1
+**********************************************

@@ -1,0 +1,99 @@
+<LayoutEditorSchematic>
+<Sheet noname>
+<LabelWire 1349 -232 A>
+<LabelWire 1512 145 B>
+<LabelWire 1264 149 A>
+<LabelWire 1387 176 VDD>
+<LabelWire 1346 -84 B>
+<LabelWire 1397 -248 VSS>
+<LabelWire 1623 -493 VSS>
+<LabelWire 1613 -69 VDD>
+<LabelWire 1490 -96 C>
+<LabelWire 1738 -100 D>
+<LabelWire 1572 -329 D>
+<LabelWire 1575 -477 C>
+<LabelWire 1394 19 AB>
+<LabelWire 1620 -229 CD>
+<LabelWire 1753 -329 AB>
+<LabelWire 1903 -331 CD>
+<LabelWire 1910 -89 AB>
+<LabelWire 1908 54 CD>
+<LabelWire 1860 70 VDD>
+<LabelWire 1878 -367 VSS>
+<LabelWire 1862 -204 out>
+<Component 1910 -169 -74 42 180 0 pmos4 LTspice>
+devicename=MP17
+value=PMOS
+</Component>
+<Component 1908 -26 -74 42 180 0 pmos4 LTspice>
+devicename=MP16
+value=PMOS
+</Component>
+<Component 1264 69 41 43 0 1 pmos4 LTspice>
+devicename=MP5
+value=PMOS
+</Component>
+<Component 1512 65 -74 42 180 0 pmos4 LTspice>
+devicename=MP8
+value=PMOS
+</Component>
+<Component 1346 -4 40 -17 0 0 nmos4 LTspice>
+devicename=MN5
+value=NMOS
+</Component>
+<Component 1349 -152 40 -17 0 0 nmos4 LTspice>
+devicename=MN6
+value=NMOS
+</Component>
+<Component 1753 -249 40 -17 0 0 nmos4 LTspice>
+devicename=MN12
+value=NMOS
+</Component>
+<Component 1903 -251 40 -17 0 0 nmos4 LTspice>
+devicename=MN13
+value=NMOS
+</Component>
+<Component 1575 -397 40 -17 0 0 nmos4 LTspice>
+devicename=MN1
+value=NMOS
+</Component>
+<Component 1572 -249 40 -17 0 0 nmos4 LTspice>
+devicename=MN2
+value=NMOS
+</Component>
+<Component 1738 -180 -74 42 180 0 pmos4 LTspice>
+devicename=MP1
+value=PMOS
+</Component>
+<Component 1490 -176 41 43 0 1 pmos4 LTspice>
+devicename=MP2
+value=PMOS
+</Component>
+<Wire 1862 -121 1835 -121 1835 -73 1860 -73 1862 -73>
+<Wire 1860 22 1833 22 1833 70 1858 70 1860 70>
+<Wire 1312 117 1339 117 1339 165 1312 165>
+<Wire 1464 113 1437 113 1437 161 1464 161>
+<Wire 1394 -52 1422 -52 1422 -100 1397 -100 1394 -100>
+<Wire 1397 -200 1425 -200 1425 -248 1397 -248>
+<Wire 1312 69 1312 48 1313 48 1394 48 1464 48 1464 65>
+<Wire 1312 165 1312 176 1387 176 1464 176 1464 161>
+<Wire 1860 -26 1860 -73>
+<Wire 1801 -297 1829 -297 1829 -345 1801 -345>
+<Wire 1951 -299 1979 -299 1979 -347 1951 -347>
+<Wire 1951 -223 1949 -223 1862 -223 1801 -223 1801 -249>
+<Wire 1951 -251 1951 -223>
+<Wire 1951 -367 1878 -367 1801 -367 1801 -345>
+<Wire 1951 -347 1951 -367>
+<Wire 1394 -4 1394 19 1394 48>
+<Wire 1397 -152 1397 -100>
+<Wire 1623 -397 1623 -345>
+<Wire 1620 -249 1620 -229 1620 -197>
+<Wire 1538 -80 1538 -69 1613 -69 1690 -69 1690 -84>
+<Wire 1538 -176 1538 -197 1539 -197 1620 -197 1690 -197 1690 -180>
+<Wire 1623 -445 1651 -445 1651 -493 1623 -493>
+<Wire 1620 -297 1648 -297 1648 -345 1623 -345 1620 -345>
+<Wire 1690 -132 1663 -132 1663 -84 1690 -84>
+<Wire 1538 -128 1565 -128 1565 -80 1538 -80>
+<Wire 1862 -169 1862 -204 1862 -223>
+</Sheet>
+</LayoutEditorSchematic>

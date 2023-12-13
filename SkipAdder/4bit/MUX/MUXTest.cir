@@ -1,0 +1,67 @@
+
+*************************************************
+*   Author: Seyed Saman Mohseni Sangtabi        *
+*   Student number: 99210067                    *
+*   Final exam, question 6                      *
+*************************************************
+
+.title MUX test
+
+* include CMOS Transistors *
+.INCLUDE mosfet.pm
+
+* define or include sub circuits *
+.INCLUDE MUX.cir
+
+*** specify circuit by modifying parameters ***
+.param voltage = 1.2v
+.param inputPeriod = 1u
+***********************************************
+
+* test signal details *
+.param Bit0PulseWidth = {inputPeriod}
+.param Bit0Period = {2*Bit0PulseWidth}
+
+.param Bit1PulseWidth = {2*inputPeriod}
+.param Bit1Period = {2*Bit1PulseWidth}
+
+.param Bit2PulseWidth = {4*inputPeriod}
+.param Bit2Period = {2*Bit2PulseWidth}
+
+.param Bit3PulseWidth = {8*inputPeriod}
+.param Bit3Period = {2*Bit3PulseWidth}
+
+.param InitialDelay = {2*inputPeriod}
+.param epsilon = {inputPeriod/4}
+
+.csparam simulationStep = {inputPeriod/1000}
+.csparam simulationDuration = {InitialDelay + Bit3Period + epsilon}
+
+
+* test signals *
+Vbit0 bit0 0 dc 0 PULSE (0 1 {InitialDelay} 0 0 {Bit0PulseWidth} {Bit0Period})
+Vbit1 bit1 0 dc 0 PULSE (0 1 {InitialDelay} 0 0 {Bit1PulseWidth} {Bit1Period})
+Vbit2 bit2 0 dc 0 PULSE (0 1 {InitialDelay} 0 0 {Bit2PulseWidth} {Bit2Period})
+Vbit3 bit3 0 dc 0 PULSE (0 1 {InitialDelay} 0 0 {Bit3PulseWidth} {Bit3Period})
+
+* power supply *
+Vpower VDD 0 {voltage}
+Vgnd VSS 0 0
+
+
+******************* netlist *******************
+XMUX VSS VDD bit0 bit1 bit3 out MUX
+***********************************************
+
+
+.control
+print {simulationStep}
+print {simulationDuration}
+tran 1n 18.25u
+plot bit0
+plot bit1
+plot bit3
+plot out
+.endc
+
+.end

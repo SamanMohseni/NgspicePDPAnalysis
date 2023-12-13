@@ -1,0 +1,26 @@
+
+*************************************************
+*   Author: Seyed Saman Mohseni Sangtabi        *
+*   Student number: 99210067                    *
+*   Final exam, question 6                      *
+*************************************************
+
+.INCLUDE AND4.cir
+.INCLUDE MUX.cir
+.INCLUDE FAP.cir
+
+***************** skip4 adder ******************
+.subckt skip4 VSS VDD bit0 bit1 bit2 bit3 bit4 bit5 bit6 bit7 bit8 S3 Cout
+
+XL4 VSS VDD Node_2 bit6 bit5 Node_1 S2 P2 FAP
+XL3 VSS VDD C bit8 bit7 Node_2 S3 P3 FAP
+XL2 VSS VDD Node_1 bit4 bit3 Node_3 S1 P1 FAP
+XL1 VSS VDD Node_3 bit2 bit1 bit0 S0 P0 FAP
+
+XAND4 VSS VDD P0 P1 P2 P3 ANDout AND4
+
+XMUX VSS VDD C bit0 ANDout Cout MUX
+
+.ends skip4
+**********************************************
+

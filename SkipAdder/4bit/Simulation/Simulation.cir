@@ -1,0 +1,106 @@
+
+*************************************************
+*   Author: Seyed Saman Mohseni Sangtabi        *
+*   Student number: 99210067                    *
+*   Final exam, question 6                      *
+*************************************************
+
+.title 4-bit carry skip adder delay test
+
+* include CMOS Transistors *
+.INCLUDE mosfet.pm
+
+* define or include sub circuits *
+.INCLUDE SkipAdder4bit.cir
+
+.INCLUDE BPSW.cir
+
+
+*** specify circuit by modifying parameters ***
+.param voltage = 1.2v
+.param inputPeriod = 2u
+***********************************************
+
+********** test signal details **********
+.param reseterPulseWidth = {inputPeriod/2}
+.param reseterPeriod = {2*reseterPulseWidth}
+
+.param Bit0PulseWidth = {inputPeriod}
+.param Bit0Period = {2*Bit0PulseWidth}
+
+.param Bit1PulseWidth = {2*inputPeriod}
+.param Bit1Period = {2*Bit1PulseWidth}
+
+.param Bit2PulseWidth = {4*inputPeriod}
+.param Bit2Period = {2*Bit2PulseWidth}
+
+.param Bit3PulseWidth = {8*inputPeriod}
+.param Bit3Period = {2*Bit3PulseWidth}
+
+.param Bit4PulseWidth = {16*inputPeriod}
+.param Bit4Period = {2*Bit4PulseWidth}
+
+.param Bit5PulseWidth = {32*inputPeriod}
+.param Bit5Period = {2*Bit5PulseWidth}
+
+.param Bit6PulseWidth = {64*inputPeriod}
+.param Bit6Period = {2*Bit6PulseWidth}
+
+.param Bit7PulseWidth = {128*inputPeriod}
+.param Bit7Period = {2*Bit7PulseWidth}
+
+.param Bit8PulseWidth = {256*inputPeriod}
+.param Bit8Period = {2*Bit8PulseWidth}
+*****************************************
+
+.param InitialDelay = {2*inputPeriod}
+.param epsilon = {inputPeriod/4}
+
+.param slope = 0
+
+.csparam simulationStep = {inputPeriod/1000}
+.csparam simulationDuration = {InitialDelay + Bit8Period + epsilon}
+
+
+* test signals *
+Vreset reset 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {reseterPulseWidth} {reseterPeriod})
+Vbit0 bit_0 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit0PulseWidth} {Bit0Period})
+Vbit1 bit_1 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit1PulseWidth} {Bit1Period})
+Vbit2 bit_2 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit2PulseWidth} {Bit2Period})
+Vbit3 bit_3 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit3PulseWidth} {Bit3Period})
+Vbit4 bit_4 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit4PulseWidth} {Bit4Period})
+Vbit5 bit_5 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit5PulseWidth} {Bit5Period})
+Vbit6 bit_6 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit6PulseWidth} {Bit6Period})
+Vbit7 bit_7 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit7PulseWidth} {Bit7Period})
+Vbit8 bit_8 0 dc 0 PULSE (0 {voltage} {InitialDelay} slope slope {Bit8PulseWidth} {Bit8Period})
+
+Vth Vsw 0 {voltage/2}
+
+XSW0 0 bit_0 reset Vsw bit0 BipolarSwitch
+XSW1 0 bit_1 reset Vsw bit1 BipolarSwitch
+XSW2 0 bit_2 reset Vsw bit2 BipolarSwitch
+XSW3 0 bit_3 reset Vsw bit3 BipolarSwitch
+XSW4 0 bit_4 reset Vsw bit4 BipolarSwitch
+XSW5 0 bit_5 reset Vsw bit5 BipolarSwitch
+XSW6 0 bit_6 reset Vsw bit6 BipolarSwitch
+XSW7 0 bit_7 reset Vsw bit7 BipolarSwitch
+XSW8 0 bit_8 reset Vsw bit8 BipolarSwitch
+
+* power supply *
+Vpower VDD 0 {voltage}
+Vgnd VSS 0 0
+
+
+******************* netlist *******************
+Xskip4 VSS VDD bit0 bit1 bit2 bit3 bit4 bit5 bit6 bit7 bit8 S3 Cout skip4
+***********************************************
+
+.control
+print {simulationStep}
+print {simulationDuration}
+tran 2n 1028.5u
+write C.txt Cout
+write S3.txt S3
+.endc
+
+.end

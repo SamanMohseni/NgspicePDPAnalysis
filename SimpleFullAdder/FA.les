@@ -1,0 +1,286 @@
+<LayoutEditorSchematic>
+<Sheet noname>
+<LabelWire 3000 -475 VSS>
+<LabelWire 2624 -776 VSS>
+<LabelWire 1886 -657 VSS>
+<LabelWire 1303 -560 VSS>
+<LabelWire 2976 -338 Sum>
+<LabelWire 2679 265 B>
+<LabelWire 2503 265 A>
+<LabelWire 2337 265 Cin>
+<LabelWire 2681 73 A>
+<LabelWire 2683 -59 B>
+<LabelWire 2685 -202 Cin>
+<LabelWire 2812 -470 Cin>
+<LabelWire 2817 -602 A>
+<LabelWire 2820 -735 B>
+<LabelWire 2550 -611 Cin>
+<LabelWire 2411 -612 B>
+<LabelWire 2261 -610 A>
+<LabelWire 1868 -532 Cout>
+<LabelWire 1591 -388 A>
+<LabelWire 1594 -530 B>
+<LabelWire 1251 -523 B>
+<LabelWire 1070 -518 A>
+<LabelWire 1152 -381 Cin>
+<LabelWire 1520 -77 Cin>
+<LabelWire 1512 145 B>
+<LabelWire 1265 -143 A>
+<LabelWire 1265 6 B>
+<LabelWire 1264 149 A>
+<LabelWire 2984 -206 VDD>
+<LabelWire 1886 -411 vdd>
+<LabelWire 2551 303 VDD>
+<LabelWire 1387 176 VDD>
+<Component 2928 -302 41 43 0 1 pmos4 LTspice>
+devicename=MP18
+value=PMOS
+</Component>
+<Component 2931 -379 40 -17 0 0 nmos4 LTspice>
+devicename=MN18
+value=NMOS
+</Component>
+<Component 2685 -282 -74 42 180 0 pmos4 LTspice>
+devicename=MP17
+value=PMOS
+</Component>
+<Component 2683 -139 -74 42 180 0 pmos4 LTspice>
+devicename=MP16
+value=PMOS
+</Component>
+<Component 2681 -7 -74 42 180 0 pmos4 LTspice>
+devicename=MP15
+value=PMOS
+</Component>
+<Component 2448 -145 41 43 0 1 pmos4 LTspice>
+devicename=MP14
+value=PMOS
+</Component>
+<Component 2679 185 41 43 0 1 pmos4 LTspice>
+devicename=MP13
+value=PMOS
+</Component>
+<Component 2503 185 41 43 0 1 pmos4 LTspice>
+devicename=MP12
+value=PMOS
+</Component>
+<Component 2337 185 41 43 0 1 pmos4 LTspice>
+devicename=MP11
+value=PMOS
+</Component>
+<Component 1820 -507 41 43 0 1 pmos4 LTspice>
+devicename=MP10
+value=PMOS
+</Component>
+<Component 1821 -561 40 -17 0 0 nmos4 LTspice>
+devicename=MN10
+value=NMOS
+</Component>
+<Component 1264 69 41 43 0 1 pmos4 LTspice>
+devicename=MP5
+value=PMOS
+</Component>
+<Component 1265 -74 41 43 0 1 pmos4 LTspice>
+devicename=MP6
+value=PMOS
+</Component>
+<Component 1265 -223 41 43 0 1 pmos4 LTspice>
+devicename=MP7
+value=PMOS
+</Component>
+<Component 1512 65 -74 42 180 0 pmos4 LTspice>
+devicename=MP8
+value=PMOS
+</Component>
+<Component 1520 -157 -74 42 180 0 pmos4 LTspice>
+devicename=MP9
+value=PMOS
+</Component>
+<Component 1152 -301 40 -17 0 0 nmos4 LTspice>
+devicename=MN5
+value=NMOS
+</Component>
+<Component 1070 -438 40 -17 0 0 nmos4 LTspice>
+devicename=MN6
+value=NMOS
+</Component>
+<Component 1251 -443 40 -17 0 0 nmos4 LTspice>
+devicename=MN7
+value=NMOS
+</Component>
+<Component 1594 -450 -60 -17 180 1 nmos4 LTspice>
+devicename=MN8
+value=NMOS
+</Component>
+<Component 1591 -308 -60 -17 180 1 nmos4 LTspice>
+devicename=MN9
+value=NMOS
+</Component>
+<Component 2409 -362 40 -17 0 0 nmos4 LTspice>
+devicename=MN11
+value=NMOS
+</Component>
+<Component 2261 -530 40 -17 0 0 nmos4 LTspice>
+devicename=MN12
+value=NMOS
+</Component>
+<Component 2411 -532 40 -17 0 0 nmos4 LTspice>
+devicename=MN13
+value=NMOS
+</Component>
+<Component 2550 -531 40 -17 0 0 nmos4 LTspice>
+devicename=MN14
+value=NMOS
+</Component>
+<Component 2812 -390 -60 -17 180 1 nmos4 LTspice>
+devicename=MN15
+value=NMOS
+</Component>
+<Component 2817 -522 -60 -17 180 1 nmos4 LTspice>
+devicename=MN16
+value=NMOS
+</Component>
+<Component 2820 -655 -60 -17 180 1 nmos4 LTspice>
+devicename=MN17
+value=NMOS
+</Component>
+<Wire 2772 -751 2772 -776 2629 -776 2624 -776 2459 -776 2459 -648>
+<Wire 2764 -336 2904 -336>
+<Wire 2928 -222 2904 -222 2904 -336 2904 -459 2931 -459>
+<Wire 2976 -302 2976 -338 2976 -379 2979 -379>
+<Wire 2976 -254 3003 -254 3003 -206 2984 -206 2976 -206>
+<Wire 2979 -427 3007 -427 3007 -475 3000 -475 2979 -475>
+<Wire 2772 -655 2772 -618 2769 -618>
+<Wire 2769 -522 2769 -486 2764 -486>
+<Wire 2496 -145 2496 -336>
+<Wire 2637 -282 2637 -336>
+<Wire 2457 -362 2457 -336 2496 -336 2637 -336 2764 -336 2764 -390>
+<Wire 2633 89 2633 159>
+<Wire 2551 185 2551 159>
+<Wire 2385 185 2385 159 2484 159 2496 159 2551 159 2633 159 2727 159 2727 185>
+<Wire 2727 281 2727 303 2551 303>
+<Wire 2385 281 2385 303 2551 303 2551 281>
+<Wire 2637 -234 2610 -234 2610 -186 2635 -186 2637 -186>
+<Wire 2635 -91 2608 -91 2608 -43 2633 -43 2635 -43>
+<Wire 2633 41 2606 41 2606 89 2633 89>
+<Wire 2496 -97 2523 -97 2523 -49 2496 -49>
+<Wire 2727 233 2754 233 2754 281 2727 281>
+<Wire 2551 233 2578 233 2578 281 2551 281>
+<Wire 2385 233 2412 233 2412 281 2385 281>
+<Wire 1546 -546 1546 -560 1335 -560 1303 -560 1299 -560>
+<Wire 1118 -534 1118 -560 1299 -560 1299 -539>
+<Wire 1200 -397 1200 -432>
+<Wire 1118 -438 1118 -432 1200 -432 1299 -432 1299 -443>
+<Wire 1543 -404 1543 -450 1546 -450>
+<Wire 1543 -308 1543 -256>
+<Wire 1472 -256 1543 -256 1728 -256 1728 -535 1800 -535>
+<Wire 1820 -427 1800 -427 1800 -535 1800 -641 1821 -641>
+<Wire 1868 -507 1868 -532 1868 -561 1869 -561>
+<Wire 1868 -459 1895 -459 1895 -411 1886 -411 1868 -411>
+<Wire 1869 -609 1897 -609 1897 -657 1891 -657 1886 -657 1869 -657>
+<Wire 1200 -301 1200 -272 1313 -272 1313 -256>
+<Wire 1313 -223 1313 -256 1472 -256 1472 -157>
+<Wire 1313 -74 1313 -127>
+<Wire 1312 117 1339 117 1339 165 1312 165>
+<Wire 1313 -26 1340 -26 1340 22 1313 22>
+<Wire 1313 -175 1340 -175 1340 -127 1313 -127>
+<Wire 1464 113 1437 113 1437 161 1464 161>
+<Wire 1472 -109 1445 -109 1445 -61 1472 -61>
+<Wire 1200 -349 1228 -349 1228 -397 1200 -397>
+<Wire 1118 -486 1146 -486 1146 -534 1118 -534>
+<Wire 1299 -491 1327 -491 1327 -539 1299 -539>
+<Wire 1546 -498 1518 -498 1518 -546 1546 -546>
+<Wire 1543 -356 1515 -356 1515 -404 1543 -404>
+<Wire 1312 69 1312 48 1313 48 1464 48 1464 65>
+<Wire 1312 165 1312 176 1387 176 1464 176 1464 161>
+<Wire 1313 22 1313 48>
+<Wire 1472 -61 1472 48 1464 48>
+<Wire 2496 -49 2496 159>
+<Wire 2633 -7 2633 -43>
+<Wire 2635 -139 2635 -186>
+<Wire 2457 -410 2485 -410 2485 -458 2457 -458>
+<Wire 2309 -578 2337 -578 2337 -626 2309 -626>
+<Wire 2459 -580 2487 -580 2487 -628 2459 -628>
+<Wire 2598 -579 2626 -579 2626 -627 2598 -627>
+<Wire 2309 -530 2309 -504 2457 -504 2459 -504 2598 -504 2598 -531>
+<Wire 2459 -532 2459 -504>
+<Wire 2457 -458 2457 -504>
+<Wire 2309 -626 2309 -648 2459 -648 2598 -648 2598 -627>
+<Wire 2459 -628 2459 -648>
+<Wire 2448 -65 2336 -65 2336 -256 2336 -442 2409 -442>
+<Wire 1728 -256 2336 -256>
+<Wire 2764 -438 2736 -438 2736 -486 2764 -486>
+<Wire 2769 -570 2741 -570 2741 -618 2769 -618>
+<Wire 2772 -703 2744 -703 2744 -751 2772 -751>
+
+<SubComponent noname>
+<Description>
+created from sheet ''noname''
+</Description>
+<Parameter>
+
+</Parameter>
+<Layout>
+[ignore]
+*
+</Layout>
+<Prefix sub>
+<Label>
+noname
+$devicename
+</Label>
+<Symbol 0>
+<Text -56 -8 8 wire out>
+<Line -56 -8 -24 -8 wire>
+<Port -56 -8 out>
+<Text -56 8 8 wire in>
+<Line -56 8 -24 8 wire>
+<Port -56 8 in>
+<Rect -24 -24 24 24 wire>
+</Symbol>
+<Offsetlabel 0 -22 22>
+<netlistFromSchematic/>
+<Netlist spice>
+X$devicename  noname
+
+</Netlist>
+<Model spice>
+$requiredModel(pmos4;LTspice)
+$requiredModel(nmos4;LTspice)
+.subckt noname 
+MMP18 Sum Node_2 VDD VDD PMOS
+MMN18 Sum Node_2 VSS VSS NMOS
+MMP17 Node_2 Cin Node_13 Node_13 PMOS
+MMP16 Node_13 B Node_14 Node_14 PMOS
+MMP15 Node_14 A Node_10 Node_10 PMOS
+MMP14 Node_2 Node_19 Node_10 Node_10 PMOS
+MMP13 Node_10 B VDD VDD PMOS
+MMP12 Node_10 A VDD VDD PMOS
+MMP11 Node_10 Cin VDD VDD PMOS
+MMP10 Cout Node_19 vdd vdd PMOS
+MMN10 Cout Node_19 VSS VSS NMOS
+MMP5 Node_26 A VDD VDD PMOS
+MMP6 Node_24 B Node_26 Node_26 PMOS
+MMP7 Node_19 A Node_24 Node_24 PMOS
+MMP8 Node_26 B VDD VDD PMOS
+MMP9 Node_19 Cin Node_26 Node_26 PMOS
+MMN5 Node_19 Cin Node_17 Node_17 NMOS
+MMN6 Node_17 A VSS VSS NMOS
+MMN7 Node_17 B VSS VSS NMOS
+MMN8 Node_18 B VSS VSS NMOS
+MMN9 Node_19 A Node_18 Node_18 NMOS
+MMN11 Node_2 Node_19 Node_30 Node_30 NMOS
+MMN12 Node_30 A VSS VSS NMOS
+MMN13 Node_30 B VSS VSS NMOS
+MMN14 Node_30 Cin VSS VSS NMOS
+MMN15 Node_2 Cin Node_7 Node_7 NMOS
+MMN16 Node_7 A Node_6 Node_6 NMOS
+MMN17 Node_6 B VSS VSS NMOS
+
+.ends noname
+
+</Model>
+</SubComponent>
+
+</Sheet>
+</LayoutEditorSchematic>

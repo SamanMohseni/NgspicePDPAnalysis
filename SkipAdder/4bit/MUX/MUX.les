@@ -1,0 +1,97 @@
+<LayoutEditorSchematic>
+<Sheet noname>
+<LabelWire -256 -234 S>
+<Wire -162 -414 -162 -592 92 -592 92 -584>
+<Wire -163 -59 -163 48 104 48>
+<LabelWire -131 -242 Sbar>
+<Wire -211 -75 -256 -75 -256 -234 -256 -398 -210 -398>
+<Wire -162 -366 -139 -366 -139 -414 -148 -414 -162 -414>
+<Wire -163 -107 -147 -107 -147 -59 -159 -59 -163 -59>
+<Wire -163 -155 -131 -155 -131 -242 -131 -318 -162 -318>
+<Component -210 -318 56 -32 0 0 nmos4 LTspice>
+devicename=MN6
+value=NMOS
+</Component>
+<Component -211 -155 56 -32 0 1 pmos4 LTspice>
+devicename=MP6
+value=PMOS
+</Component>
+<LabelWire 56 3 Sbar>
+<LabelWire 43 -398 Sbar>
+<LabelWire 44 -543 A>
+<LabelWire 207 10 A>
+<LabelWire 49 -150 S>
+<LabelWire 197 -399 S>
+<LabelWire 198 -544 B>
+<LabelWire 200 -143 B>
+<LabelWire 312 48 VDD>
+<LabelWire 330 -584 VSS>
+<Component 480 -153 56 -32 0 1 pmos4 LTspice>
+devicename=MP2
+value=PMOS
+</Component>
+<Component 481 -316 56 -32 0 0 nmos4 LTspice>
+devicename=MN2
+value=NMOS
+</Component>
+<Component 43 -318 56 -32 0 0 nmos4 LTspice>
+devicename=MN1
+value=NMOS
+</Component>
+<Component 207 -70 56 -32 0 1 pmos4 LTspice>
+devicename=MP1
+value=PMOS
+</Component>
+<Component 56 -77 56 -32 0 1 pmos4 LTspice>
+devicename=MP3
+value=PMOS
+</Component>
+<Component 49 -230 56 -32 0 1 pmos4 LTspice>
+devicename=MP4
+value=PMOS
+</Component>
+<Component 200 -223 56 -32 0 1 pmos4 LTspice>
+devicename=MP5
+value=PMOS
+</Component>
+<Component 197 -319 56 -32 0 0 nmos4 LTspice>
+devicename=MN3
+value=NMOS
+</Component>
+<Component 198 -464 56 -32 0 0 nmos4 LTspice>
+devicename=MN4
+value=NMOS
+</Component>
+<Component 44 -463 56 -32 0 0 nmos4 LTspice>
+devicename=MN5
+value=NMOS
+</Component>
+<Port 640 -240 out>
+<Wire 640 -240 560 -240>
+<Wire 528 -153 560 -153 560 -240 560 -316 529 -316>
+<Wire 255 -22 271 -22 271 26 255 26>
+<Wire 528 -105 544 -105 544 -57 532 -57 528 -57>
+<Wire 91 -366 114 -366 114 -414 92 -414 91 -414>
+<Wire 529 -364 552 -364 552 -412 543 -412 529 -412>
+<Wire 104 -29 120 -29 120 19 104 19>
+<Wire 97 -182 113 -182 113 -134 97 -134>
+<Wire 248 -175 264 -175 264 -127 248 -127>
+<Wire 245 -367 268 -367 268 -415 246 -415 245 -415>
+<Wire 246 -512 269 -512 269 -560 246 -560>
+<Wire 92 -511 115 -511 115 -559 92 -559>
+<Wire 104 19 104 48 255 48 255 26>
+<Wire 104 -77 104 -88 113 -88 248 -88 255 -88 255 -70>
+<Wire 113 -134 113 -88>
+<Wire 248 -127 248 -88>
+<Wire 97 -230 97 -272 101 -272 245 -272 248 -272 248 -223>
+<Wire 248 -272 408 -272 408 -73 480 -73>
+<Wire 408 -272 408 -396 481 -396>
+<Wire 91 -318 91 -272 101 -272>
+<Wire 245 -319 245 -272>
+<Wire 92 -463 92 -414>
+<Wire 246 -464 246 -415>
+<Wire 92 -559 92 -584 269 -584 269 -560>
+<Wire 269 -584 330 -584 543 -584 543 -412>
+<Wire 532 -57 532 48 312 48 255 48>
+</Sheet>
+</LayoutEditorSchematic>

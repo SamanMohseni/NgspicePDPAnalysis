@@ -1,0 +1,14 @@
+
+*start of netlist
+XL8 VSS VDD Node_3 f6 f5 Node_2 Node_30 FA_X1
+XL7 VSS VDD Node_1 f8 f7 Node_3 Node_33 FA_X1
+XL6 VSS VDD Node_2 f4 f3 Node_4 Node_34 FA_X1
+XL5 VSS VDD Node_4 f2 f1 f0 Node_35 FA_X1
+XL1 VSS VDD Node_5 bit1 bit0 Node_1 S0 FA_X1
+XL2 VSS VDD Node_7 bit3 bit2 Node_5 S1 FA_X1
+XL3 VSS VDD C bit7 bit6 Node_6 S3 FA_X1
+XL4 VSS VDD Node_6 bit5 bit4 Node_7 S2 FA_X1
+
+*end of netlist
+
+

@@ -1,0 +1,16 @@
+********************* MUX ********************
+.subckt MUX VSS VDD A B S out
+MMN6 Sbar S VSS VSS NMOS
+MMP6 Sbar S VDD VDD PMOS
+MMP2 out Node_17 VDD VDD PMOS
+MMN2 out Node_17 VSS VSS NMOS
+MMN1 Node_17 Sbar Node_8 Node_8 NMOS
+MMP1 Node_11 A VDD VDD PMOS
+MMP3 Node_11 Sbar VDD VDD PMOS
+MMP4 Node_17 S Node_11 Node_11 PMOS
+MMP5 Node_17 B Node_11 Node_11 PMOS
+MMN3 Node_17 S Node_13 Node_13 NMOS
+MMN4 Node_13 B VSS VSS NMOS
+MMN5 Node_8 A VSS VSS NMOS
+.ends MUX
+**********************************************

@@ -1,0 +1,37 @@
+<LayoutEditorSchematic>
+<Sheet noname>
+<LabelWire 415 -421 C>
+<LabelWire 415 -401 S3>
+<LabelWire 415 -321 S2>
+<LabelWire 414 -238 S1>
+<LabelWire 414 -158 S0>
+<LabelWire 355 -421 bit8>
+<LabelWire 355 -401 bit7>
+<LabelWire 355 -341 bit6>
+<LabelWire 355 -321 bit5>
+<LabelWire 354 -258 bit4>
+<LabelWire 354 -238 bit3>
+<LabelWire 354 -178 bit2>
+<LabelWire 354 -158 bit1>
+<LabelWire 384 -138 bit0>
+<Wire 414 -258 414 -288 385 -288 385 -301>
+<Component 385 -331 -9 7 0 0 FA openCellLibrary>
+devicename=L4
+output=X1
+</Component>
+<Component 385 -411 -9 7 0 0 FA openCellLibrary>
+devicename=L3
+output=X1
+</Component>
+<Wire 415 -341 415 -371 385 -371 385 -381>
+<Wire 414 -178 414 -208 384 -208 384 -218>
+<Component 384 -248 -9 7 0 0 FA openCellLibrary>
+devicename=L2
+output=X1
+</Component>
+<Component 384 -168 -9 7 0 0 FA openCellLibrary>
+devicename=L1
+output=X1
+</Component>
+</Sheet>
+</LayoutEditorSchematic>
