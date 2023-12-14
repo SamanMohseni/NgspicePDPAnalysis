@@ -41,4 +41,4 @@ The PDP values for different adders were obtained by multiplying the power consu
 These results indicate that carry skip adders perform better in terms of power consumption for higher bit calculations, although the improvement may not justify the energy cost for smaller bit sizes. It's worth noting that the carry skip adder circuits were not optimized and produced significant overhead, which could be improved upon.
 
 ## Conclusion
-This project report outlines the implementation and analysis of two types of digital adder circuits. The findings highlight the trade-offs between speed and power consumption in different adder architectures and provide insights into the scalability of these designs for larger bit-width operations.
+This project report implements and analyses the two types of digital adder circuits, highlighting the trade-offs between speed and power consumption in different adder architectures and provide insights into the scalability of these designs for larger bit-width operations.
