@@ -1,6 +1,6 @@
 # Ngspice Power-Delay Product Analysis of Adder Circuits using Ngspice and a custom-written C++ code.
 
-This project is part of the **Low Power Design** course.
+This project was originally conducted as part of the **Spring 2021 Low Power Design** course.
 
 ## Description
 In this project, we aim to implement and analyze two types of adder circuits: the ripple carry adder (a basic chain of Full Adders) and the carry skip adder. Using SPICE simulations, we will determine the Power-Delay Product (PDP) for these two methods. Instead of writing the SPICE code from scratch, we will leverage software that allows for the drawing of transistor-level schematic circuits from which SPICE code can be extracted. We will also examine how scaling the adder size from 8 to 12 and 16 bits affects the PDP ratio between the two methods.
@@ -42,3 +42,6 @@ These results indicate that carry skip adders perform better in terms of power c
 
 ## Conclusion
 This project report implements and analyses the two types of digital adder circuits, highlighting the trade-offs between speed and power consumption in different adder architectures and provide insights into the scalability of these designs for larger bit-width operations.
+
+## Acknowledgments
+Course instructor: [Dr. Alireza Ejlali](https://scholar.google.com/citations?user=H7G8s68AAAAJ&hl=en)
